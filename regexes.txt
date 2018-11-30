@@ -1,0 +1,31 @@
+[A-Z][A-Z]+ |[A-Z][A-Z]+,|[A-Z][A-Z]+.
+$+
+you|YOU
+(M|m)illion
+(L|l)ose *(W|w)eight|(W|w)eight *(L|l)oss
+FREE|free
+(W|w)in|WIN|(W|w)on|WON
+(P|p)orn|PORN
+(S|s)ex|SEX
+(N|n)ude|NUDE
+(J|j)ackpot|JACKPOT
+(P|p)rize|PRIZE
+(D|d)iscount|DISCOUNT
+(S|s)ale|SALE
+(V|v)irus|VIRUS
+(C|c)ongratulations|(C|c)ongrats|CONGRATULATIONS|CONGRATS
+(re|a|RE|A)ward|(RE|A)WARD
+(U|u)rgent|URGENT
+(C|c)lient|CLIENT
+(C|c)ustomer|CUSTOMER
+(C|c)ash|CASH
+[0-9]+
+(C|c)laim|CLAIM
+(P|p)rivate|PRIVATE
+(E|e)xclusive|EXCLUSIVE
+(G|g)uarantee|GUARANTEE
+(A|a)pply|APPLY
+(A|a)sap|ASAP
+(M|m)oney|MONEY
+(S|s)ubscribe|SUBSCRIBE
+ *
