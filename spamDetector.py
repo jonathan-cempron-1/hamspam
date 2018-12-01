@@ -895,40 +895,151 @@ print "word weight loss count: " + str(countWordWeightLoss) + " trhesh: " + str(
 print "       word free count: " + str(countWordFree) + " trhesh: " + str(threshWordFree)
 print "mail1 total word count: " + str(countTotalWords) 
 '''
-inptfl = "rawdata.csv"
-spamreader = []
-processed = []
-alphabet1, finalDfaTable1, finalEndStates1 = getDFA("[A-Z][A-Z]+ |[A-Z][A-Z]+,|[A-Z][A-Z]+.")
-alphabet2, finalDfaTable2, finalEndStates2 = getDFA("$+")
-alphabet3, finalDfaTable3, finalEndStates3 = getDFA("(y|Y)ou|YOU")
-alphabet4, finalDfaTable4, finalEndStates4 = getDFA("(M|m)illion")
-alphabet5, finalDfaTable5, finalEndStates5 = getDFA("(L|l)ose *(W|w)eight|(W|w)eight *(L|l)oss")
+
+def isSpam(inptflnm):
+	#global alphabet1, finalDfaTable1, finalEndStates1
+	#global alphabet2, finalDfaTable2, finalEndStates2
+	#global alphabet3, finalDfaTable3, finalEndStates3
+	#global alphabet4, finalDfaTable4, finalEndStates4
+	#global alphabet5, finalDfaTable5, finalEndStates5
+	global alphabet6, finalDfaTable6, finalEndStates6
+	global alphabet7, finalDfaTable7, finalEndStates7
+	global alphabet8, finalDfaTable8, finalEndStates8
+	global alphabet9, finalDfaTable9, finalEndStates9
+	#global alphabet10, finalDfaTable10, finalEndStates10
+	#global alphabet11, finalDfaTable11, finalEndStates11
+	global alphabet12, finalDfaTable12, finalEndStates12 
+	global alphabet13, finalDfaTable13, finalEndStates13 
+	#global alphabet14, finalDfaTable14, finalEndStates14
+	#global alphabet15, finalDfaTable15, finalEndStates15
+	global alphabet16, finalDfaTable16, finalEndStates16 
+	global alphabet17, finalDfaTable17, finalEndStates17 
+	global alphabet18, finalDfaTable18, finalEndStates18 
+	#global alphabet19, finalDfaTable19, finalEndStates19
+	global alphabet20, finalDfaTable20, finalEndStates20 
+	global alphabet21, finalDfaTable21, finalEndStates21 
+	global alphabet22, finalDfaTable22, finalEndStates22 
+	global alphabet23, finalDfaTable23, finalEndStates23 
+	global alphabet24, finalDfaTable24, finalEndStates24 
+	#global alphabet25, finalDfaTable25, finalEndStates25
+	global alphabet26, finalDfaTable26, finalEndStates26 
+	global alphabet27, finalDfaTable27, finalEndStates27 
+	#global alphabet28, finalDfaTable28, finalEndStates28
+	#global alphabet29, finalDfaTable29, finalEndStates29
+	global alphabet30, finalDfaTable30, finalEndStates30
+	#global alphabet999, finalDfaTable999, finalEndStates999	
+	#cnt1 = 0
+	#cnt2 = 0
+	#cnt3 = 0
+	#cnt4 = 0
+	#cnt5 = 0
+	cnt6 = 0
+	cnt7 = 0
+	cnt8 = 0
+	cnt9 = 0
+	#cnt10 = 0
+	#cnt11 = 0
+	cnt12 = 0
+	cnt13 = 0
+	#cnt14 = 0
+	#cnt15 = 0
+	cnt16 = 0
+	cnt17 = 0
+	cnt18 = 0
+	#cnt19 = 0
+	cnt20 = 0
+	cnt21 = 0
+	cnt22 = 0
+	cnt23 = 0
+	cnt24 = 0
+	#cnt25 = 0
+	cnt26 = 0
+	cnt27 = 0
+	#cnt28 = 0
+	#cnt29 = 0
+	cnt30 = 0
+	#cnt999 = 0
+	f = open(inptflnm, "r")
+	for line in f:
+		#cnt1 += countAccepted(line, alphabet1, finalDfaTable1, finalEndStates1)
+		#cnt2 += countAccepted(line, alphabet2, finalDfaTable2, finalEndStates2)
+		#cnt3 += countAccepted(line, alphabet3, finalDfaTable3, finalEndStates3)
+		#cnt4 += countAccepted(line, alphabet4, finalDfaTable4, finalEndStates4)
+		#cnt5 += countAccepted(line, alphabet5, finalDfaTable5, finalEndStates5)
+		cnt6 += countAccepted(line, alphabet6, finalDfaTable6, finalEndStates6)
+		cnt7 += countAccepted(line, alphabet7, finalDfaTable7, finalEndStates7)
+		cnt8 += countAccepted(line, alphabet8, finalDfaTable8, finalEndStates8)
+		cnt9 += countAccepted(line, alphabet9, finalDfaTable9, finalEndStates9)
+		#cnt10 += countAccepted(line, alphabet10, finalDfaTable10, finalEndStates10)
+		#cnt11 += countAccepted(line, alphabet11, finalDfaTable11, finalEndStates11)
+		cnt12 += countAccepted(line, alphabet12, finalDfaTable12, finalEndStates12)
+		cnt13 += countAccepted(line, alphabet13, finalDfaTable13, finalEndStates13)
+		#cnt14 += countAccepted(line, alphabet14, finalDfaTable14, finalEndStates14)
+		#cnt15 += countAccepted(line, alphabet15, finalDfaTable15, finalEndStates15)
+		cnt16 += countAccepted(line, alphabet16, finalDfaTable16, finalEndStates16)
+		cnt17 += countAccepted(line, alphabet17, finalDfaTable17, finalEndStates17)
+		cnt18 += countAccepted(line, alphabet18, finalDfaTable18, finalEndStates18)
+		#cnt19 += countAccepted(line, alphabet19, finalDfaTable19, finalEndStates19)
+		cnt20 += countAccepted(line, alphabet20, finalDfaTable20, finalEndStates20)
+		cnt21 += countAccepted(line, alphabet21, finalDfaTable21, finalEndStates21)
+		cnt22 += countAccepted(line, alphabet22, finalDfaTable22, finalEndStates22)
+		cnt23 += countAccepted(line, alphabet23, finalDfaTable23, finalEndStates23)
+		cnt24 += countAccepted(line, alphabet24, finalDfaTable24, finalEndStates24)
+		#cnt25 += countAccepted(line, alphabet25, finalDfaTable25, finalEndStates25)
+		cnt26 += countAccepted(line, alphabet26, finalDfaTable26, finalEndStates26)
+		cnt27 += countAccepted(line, alphabet27, finalDfaTable27, finalEndStates27)
+		#cnt28 += countAccepted(line, alphabet28, finalDfaTable28, finalEndStates28)
+		#cnt29 += countAccepted(line, alphabet29, finalDfaTable29, finalEndStates29)
+		cnt30 += countAccepted(line, alphabet30, finalDfaTable30, finalEndStates30)
+		#cnt999 += countAccepted(line, alphabet999, finalDfaTable999, finalEndStates999)
+	if cnt6>0 or cnt7>0 or cnt8>0 or cnt9>0 or cnt12>0 or cnt13>0 or cnt16>0 or cnt17>0 or cnt18>0 or cnt20>0 or cnt21>0 or cnt22>0 or cnt23>0 or cnt24>0 or cnt26>0 or cnt27>0 or cnt30>0:
+		return True
+	return False
+
+
+#alphabet1, finalDfaTable1, finalEndStates1 = getDFA("[A-Z][A-Z]+ |[A-Z][A-Z]+,|[A-Z][A-Z]+.")
+#alphabet2, finalDfaTable2, finalEndStates2 = getDFA("$+")
+#alphabet3, finalDfaTable3, finalEndStates3 = getDFA("(y|Y)ou|YOU")
+#alphabet4, finalDfaTable4, finalEndStates4 = getDFA("(M|m)illion")
+#alphabet5, finalDfaTable5, finalEndStates5 = getDFA("(L|l)ose *(W|w)eight|(W|w)eight *(L|l)oss")
 alphabet6, finalDfaTable6, finalEndStates6 = getDFA("FREE|(f|F)ree")
 alphabet7, finalDfaTable7, finalEndStates7 = getDFA("(W|w)(i|o)n|W(I|O)N")
 alphabet8, finalDfaTable8, finalEndStates8 = getDFA("(P|p)orn|PORN")
 alphabet9, finalDfaTable9, finalEndStates9 = getDFA("(S|s)ex|SEX")
-alphabet10, finalDfaTable10, finalEndStates10 = getDFA("(N|n)ude|NUDE")
-alphabet11, finalDfaTable11, finalEndStates11 = getDFA("(J|j)ackpot|JACKPOT")
+#alphabet10, finalDfaTable10, finalEndStates10 = getDFA("(N|n)ude|NUDE")
+#alphabet11, finalDfaTable11, finalEndStates11 = getDFA("(J|j)ackpot|JACKPOT")
 alphabet12, finalDfaTable12, finalEndStates12 = getDFA("(P|p)rize|PRIZE")
 alphabet13, finalDfaTable13, finalEndStates13 = getDFA("(D|d)iscount|DISCOUNT")
-alphabet14, finalDfaTable14, finalEndStates14 = getDFA("(S|s)ale|SALE")
-alphabet15, finalDfaTable15, finalEndStates15 = getDFA("(V|v)irus|VIRUS")
+#alphabet14, finalDfaTable14, finalEndStates14 = getDFA("(S|s)ale|SALE")
+#alphabet15, finalDfaTable15, finalEndStates15 = getDFA("(V|v)irus|VIRUS")
 alphabet16, finalDfaTable16, finalEndStates16 = getDFA("(C|c)ongratulations|(C|c)ongrats|CONGRATULATIONS|CONGRATS")
 alphabet17, finalDfaTable17, finalEndStates17 = getDFA("(re|a|RE|A)ward|(RE|A)WARD")
 alphabet18, finalDfaTable18, finalEndStates18 = getDFA("(U|u)rgent|URGENT")
-alphabet19, finalDfaTable19, finalEndStates19 = getDFA("(C|c)lient|CLIENT")
+#alphabet19, finalDfaTable19, finalEndStates19 = getDFA("(C|c)lient|CLIENT")
 alphabet20, finalDfaTable20, finalEndStates20 = getDFA("(C|c)ustomer|CUSTOMER")
 alphabet21, finalDfaTable21, finalEndStates21 = getDFA("(C|c)ash|CASH")
 alphabet22, finalDfaTable22, finalEndStates22 = getDFA("[0-9]+")
 alphabet23, finalDfaTable23, finalEndStates23 = getDFA("(C|c)laim|CLAIM")
 alphabet24, finalDfaTable24, finalEndStates24 = getDFA("(P|p)rivate|PRIVATE")
-alphabet25, finalDfaTable25, finalEndStates25 = getDFA("(E|e)xclusive|EXCLUSIVE")
+#alphabet25, finalDfaTable25, finalEndStates25 = getDFA("(E|e)xclusive|EXCLUSIVE")
 alphabet26, finalDfaTable26, finalEndStates26 = getDFA("(G|g)uarantee|GUARANTEE")
 alphabet27, finalDfaTable27, finalEndStates27 = getDFA("(A|a)pply|APPLY")
-alphabet28, finalDfaTable28, finalEndStates28 = getDFA("(A|a)sap|ASAP")
-alphabet29, finalDfaTable29, finalEndStates29 = getDFA("(M|m)oney|MONEY")
+#alphabet28, finalDfaTable28, finalEndStates28 = getDFA("(A|a)sap|ASAP")
+#alphabet29, finalDfaTable29, finalEndStates29 = getDFA("(M|m)oney|MONEY")
 alphabet30, finalDfaTable30, finalEndStates30 = getDFA("(S|s)ubscribe|SUBSCRIBE")
-alphabet999, finalDfaTable999, finalEndStates999 = getDFA(" *")
+#alphabet999, finalDfaTable999, finalEndStates999 = getDFA(" *")
+
+while 1:
+	inptflnm = raw_input("email textfile: ")
+	if inptflnm == "exit" or inptflnm == "quit":
+		break
+	if isSpam(inptflnm):
+		print "SPAM EMAIL"
+	else:
+		print "HAM EMAIL"
+
+
+'''
 with open(inptfl, 'rb') as csvfile:
 	spamreader = csv.reader(csvfile)
 	for i, row in enumerate(spamreader):
@@ -1003,3 +1114,5 @@ with open('preprocessed.csv', mode='w') as pp2:
     pp2 = csv.writer(pp2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     for row in processed:
 		pp2.writerow(row)
+'''
+
